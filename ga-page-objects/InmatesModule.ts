@@ -3,6 +3,7 @@ import { last } from "cypress/types/lodash"
 class ApplicantsModule {
 
     // New Applicant
+    private pdf = "//tbody/tr/th/span/*[@class='svg-inline--fa fa-file-pdf fa-w-12']"
     private applicants = "//*[@id='sidebar']/ul/li[7]/a[contains(.,'Applicants')]"
     private addApplicant = "//button[@id='addButton']"
     private firstNameField = "//input[@id='firstName']"
@@ -222,6 +223,10 @@ class ApplicantsModule {
         cy.xpath(this.approvedCheckbox).check() 
     }
 
+    verifyPDFDeleted(){
+        cy.xpath(this.pdf).should('not.exist')
+    }
+
     // clickCreateBtn(){
     //     return cy.xpath(this.createBtn).should('be.visible').click()
     // }
@@ -262,12 +267,6 @@ class ApplicantsModule {
         this.selectVolunteerDropdown()
         this.checkApprovedCheckbox()
         // this.clickCreateBtn()
-
-
-
-
-
-
     }
 }
 export default new ApplicantsModule();
