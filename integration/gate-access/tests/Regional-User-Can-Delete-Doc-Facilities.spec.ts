@@ -1,8 +1,8 @@
 
 import { expect, assert, should } from 'chai';
-import LoginPage from '../../ga-page-objects/LoginPage'
-import FacilityPage from '../../ga-page-objects/FacilityPage'
-import InmatesModule from '../../ga-page-objects/InmatesModule'
+import LoginPage from '../../../ga-page-objects/LoginPage'
+import FacilityPage from '../../../ga-page-objects/FacilityPage'
+import InmatesModule from '../../../ga-page-objects/InmatesModule'
 
     describe('Regional User Can Delete Doc In Facilities Module', () => {
 
